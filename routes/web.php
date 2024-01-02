@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('welcome', function(){
     return view('welcome');
 });
+
+Route::get('about/{name}/{gender}', function($name, $gender){
+    // return view('about',['name'=>$name, 'gender'=>$gender]);
+    return view('about',compact('name', 'gender'));
+});
