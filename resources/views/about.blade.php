@@ -9,5 +9,10 @@
 <body>
     <h1>User name is: {{ $name }}</h1>
     <h1>User gender is: {{ $gender }}</h1>
+
+    <ul>
+        <li><a href={{ route('home') }}>Home</a></li>
+        <li><a href={{ route('welcome') }}>Welcome</a></li>
+    </ul>
 </body>
 </html>

@@ -9,5 +9,15 @@
 <body>
     <h1>This is home page</h1>
     <p>This is home page content</p>
+
+    <ul>
+        <li><a href={{ URL::to('/home') }}>Home</a></li>
+        <li><a href={{  URL::to('/welcome') }}>Welcome</a></li>
+    </ul>
+
+    {{-- <ul>
+        <li><a href={{ route('home') }}>Home</a></li>
+        <li><a href={{ route('welcome') }}>Welcome</a></li>
+    </ul> --}}
 </body>
 </html>
