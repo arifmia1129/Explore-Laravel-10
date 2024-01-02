@@ -25,3 +25,7 @@ Route::get('about/{name}/{gender}', function($name, $gender){
     // return view('about',['name'=>$name, 'gender'=>$gender]);
     return view('about',compact('name', 'gender'));
 });
+
+Route::fallback(function(){
+    return view('404');
+});
