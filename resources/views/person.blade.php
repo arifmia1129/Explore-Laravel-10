@@ -11,5 +11,7 @@
     <p>Name: {{ $name }}</p>
     <p>Age: {{ $age }}</p>
     <p>Gender: {{ $gender }}</p>
+    <p>City: {{ $city }}</p>
+    <p>Country: {{ $country }}</p>
 </body>
 </html>
