@@ -82,3 +82,11 @@ Route::get('username/{name}', function($name){
     return 'Valid username: '.$name;
 })->where('name', '[a-zA-Z0-9]+');
 
+
+
+// Example route for testing global expression constraints
+
+Route::get('employee/{id}', function($id){
+    return 'Employee id is: '.$id;
+});
+
