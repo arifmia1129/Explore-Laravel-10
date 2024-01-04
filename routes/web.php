@@ -99,3 +99,17 @@ Route::get('customer/dashboard', function () {
     return view('customer.dashboard');
 });
 
+
+Route::get('person', function() {
+    // return view('person',['name'=>'Md. Arif Mia', 'age'=>'30', 'gender'=>'Male']);
+    // return view('person')->with('name', 'Md. Arif Mia')->with('age', '30')->with('gender', 'male');
+    // return view('person')->with(['name'=>'Md. Arif Mia', 'age'=>'30', 'gender'=>'Male']);
+
+    $name = 'Md. Arif Mia';
+    $age = '32';
+    $gender = 'Male';
+
+    return view('person', compact('name', 'age', 'gender'));
+
+});
+
