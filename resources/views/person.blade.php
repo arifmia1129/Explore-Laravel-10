@@ -13,5 +13,12 @@
     <p>Gender: {{ $gender }}</p>
     <p>City: {{ $city }}</p>
     <p>Country: {{ $country }}</p>
+
+    <div>
+        <x-input label="Name" name="name" type="text"
+        placeholder="Write your full name"/>
+        <x-input label="Email" name="email" type="email"
+        placeholder="Write your valid email here"/>
+    </div>
 </body>
 </html>
