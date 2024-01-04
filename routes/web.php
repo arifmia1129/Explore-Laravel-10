@@ -67,3 +67,7 @@ Route::get('about', function(){
 
 Route::permanentRedirect('about', 'contact');
 
+// Route view
+
+Route::view('myself', 'myself',['name'=>'Md. Arif Mia']);
+
