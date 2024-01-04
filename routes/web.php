@@ -71,3 +71,14 @@ Route::permanentRedirect('about', 'contact');
 
 Route::view('myself', 'myself',['name'=>'Md. Arif Mia']);
 
+
+// Regular expression constraints
+
+Route::get('/student/{id}', function ($id){
+    return 'Student id is:'.' '.$id;
+})->where('id','[0-9]+');
+
+Route::get('username/{name}', function($name){
+    return 'Valid username: '.$name;
+})->where('name', '[a-zA-Z0-9]+');
+
