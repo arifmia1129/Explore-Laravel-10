@@ -32,25 +32,25 @@ Route::fallback(function(){
 
 
 // group route with middleware
-Route::middleware('auth')->group(function(){
-    Route::get('dashboard', function() {
-        return 'Dashboard';
-    });
-    Route::get('profile', function() {
-        return 'Profile';
-    });
-});
+// Route::middleware('auth')->group(function(){
+//     Route::get('dashboard', function() {
+//         return 'Dashboard';
+//     });
+//     Route::get('profile', function() {
+//         return 'Profile';
+//     });
+// });
 
 // group route with prefix
 
-Route::prefix('admin')->group(function(){
-    Route::get('profile', function (){
-        return 'Admin profile';
-    });
-    Route::get('dashboard', function (){
-        return 'Admin dashboard';
-    });
-});
+// Route::prefix('admin')->group(function(){
+//     Route::get('profile', function (){
+//         return 'Admin profile';
+//     });
+//     Route::get('dashboard', function (){
+//         return 'Admin dashboard';
+//     });
+// });
 
 
 // Redirect
@@ -88,5 +88,14 @@ Route::get('username/{name}', function($name){
 
 Route::get('employee/{id}', function($id){
     return 'Employee id is: '.$id;
+});
+
+// nested views directories
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('customer/dashboard', function () {
+    return view('customer.dashboard');
 });
 
