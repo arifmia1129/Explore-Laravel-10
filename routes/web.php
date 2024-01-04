@@ -52,3 +52,18 @@ Route::prefix('admin')->group(function(){
     });
 });
 
+
+// Redirect
+Route::get('contact', function(){
+    return '<h1>This is contact page</h1>';
+});
+
+Route::get('about', function(){
+    return '<h1>This is about page</h1>';
+    // return redirect('contact');
+});
+
+// Route::redirect('about', 'contact', 301);
+
+Route::permanentRedirect('about', 'contact');
+
