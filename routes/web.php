@@ -29,3 +29,26 @@ Route::get('about/{name}/{gender}', function($name, $gender){
 Route::fallback(function(){
     return view('404');
 });
+
+
+// group route with middleware
+Route::middleware('auth')->group(function(){
+    Route::get('dashboard', function() {
+        return 'Dashboard';
+    });
+    Route::get('profile', function() {
+        return 'Profile';
+    });
+});
+
+// group route with prefix
+
+Route::prefix('admin')->group(function(){
+    Route::get('profile', function (){
+        return 'Admin profile';
+    });
+    Route::get('dashboard', function (){
+        return 'Admin dashboard';
+    });
+});
+
