@@ -113,3 +113,10 @@ Route::get('person', function() {
 
 });
 
+
+
+Route::get('/', function (){
+    $data = '';
+    return view('person',compact('data'));
+});
+

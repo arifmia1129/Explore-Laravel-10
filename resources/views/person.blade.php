@@ -20,5 +20,8 @@
         <x-input label="Email" name="email" type="email"
         placeholder="Write your valid email here"/>
     </div>
+
+    {{ strtoupper('Md. Arif Mia') }}
+    {{ time() }}
 </body>
 </html>
