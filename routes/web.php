@@ -120,3 +120,13 @@ Route::get('/', function (){
     return view('person',compact('data'));
 });
 
+Route::get('/blade-directive', function () {
+    $city = 'Gaibandha';
+    $country = 'Bangladesh';
+
+    $name = '';
+
+    return view('directive', compact('city', 'country', 'name'));
+
+});
+
