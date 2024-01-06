@@ -130,3 +130,12 @@ Route::get('/blade-directive', function () {
 
 });
 
+
+Route::get('admin', function () {
+    return view('admin.home');
+});
+
+Route::get('admin/settings', function () {
+    return view('admin.settings');
+});
+
