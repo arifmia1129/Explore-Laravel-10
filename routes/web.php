@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
@@ -150,4 +151,9 @@ Route::resource('teacher', TeacherController::class);
 
 
 Route::get('blog', BlogController::class);
+
+
+Route::get('/admission', [AdmissionController::class, 'index']);
+
+Route::post('/admission/store', [AdmissionController::class,'store']);
 
