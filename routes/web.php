@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -142,4 +143,7 @@ Route::get('admin/settings', function () {
 
 
 Route::get('user/{id}', [UserController::class, 'index']);
+
+
+Route::resource('teacher', TeacherController::class);
 
