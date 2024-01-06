@@ -1,4 +1,4 @@
-@if ($city && $country)
+{{-- @if ($city && $country)
 <h1>The city name is: {{ $city }}</h1>
 <h1>The country name is: {{ $country }}</h1>
 @elseif ($city)
@@ -15,4 +15,16 @@
 
 @empty($name)
     <h1>The user name is not provided</h1>
-@endempty
+@endempty --}}
+
+
+{{-- Raw php blade directive --}}
+
+@php
+    $username = 'arifmia';
+    $password = '123456';
+@endphp
+
+@if ($username == 'arifmia' && $password == '123456')
+<h1>Successfully logged in to your account. Congratulations!</h1>
+@endif
