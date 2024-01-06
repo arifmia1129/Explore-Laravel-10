@@ -20,11 +20,43 @@
 
 {{-- Raw php blade directive --}}
 
-@php
+{{-- @php
     $username = 'arifmia';
     $password = '123456';
 @endphp
 
 @if ($username == 'arifmia' && $password == '123456')
 <h1>Successfully logged in to your account. Congratulations!</h1>
-@endif
+@endif --}}
+
+
+{{-- Loop blade directive --}}
+
+{{-- for loop --}}
+{{-- @for ($i = 1; $i <= 10; $i++)
+    @for ($j = 1; $j <= 10; $j++)
+        <p>{{ $i }} x {{ $j }} = {{ $i*$j }}</p>
+    @endfor
+    <br>
+@endfor --}}
+
+{{-- foreach loop --}}
+
+@php
+    $students = ['arif', 'shahin', 'soikat', 'sadik', 'hannan'];
+    $teachers = ['Hasan', 'Al-Amin'];
+@endphp
+
+{{-- foreach loop --}}
+{{-- @foreach ($students as $student)
+    <h1>{{ ucwords($student) }}</h1>
+    <br>
+@endforeach --}}
+
+{{-- forelse loop --}}
+{{-- @forelse ($teachers as $teacher)
+    <h1>{{ ucwords($teacher) }}</h1>
+@empty
+    <h1>No teachers information found.</h1>
+@endforelse --}}
+
