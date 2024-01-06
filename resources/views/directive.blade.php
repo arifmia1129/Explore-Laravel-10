@@ -60,3 +60,4 @@
     <h1>No teachers information found.</h1>
 @endforelse --}}
 
+@include('test')
