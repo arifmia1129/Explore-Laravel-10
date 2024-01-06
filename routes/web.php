@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -115,10 +116,10 @@ Route::get('person', function() {
 
 
 
-Route::get('/', function (){
-    $data = '';
-    return view('person',compact('data'));
-});
+// Route::get('/', function (){
+//     $data = '';
+//     return view('person',compact('data'));
+// });
 
 Route::get('/blade-directive', function () {
     $city = 'Gaibandha';
@@ -138,4 +139,7 @@ Route::get('admin', function () {
 Route::get('admin/settings', function () {
     return view('admin.settings');
 });
+
+
+Route::get('user/{id}', [UserController::class, 'index']);
 
