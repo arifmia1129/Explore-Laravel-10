@@ -11,7 +11,11 @@ class AdmissionController extends Controller
     }
 
     public function store(Request $request) {
-        dump($request->all());
-        return;
+        $data = $request->all();
+        return response()->json([
+            'success'=> true,
+            'message'=>'Successfully stored admission',
+            'data'=> $data
+        ]);
     }
 }
