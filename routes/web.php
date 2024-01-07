@@ -150,10 +150,10 @@ Route::get('user/{id}', [UserController::class, 'index']);
 Route::resource('teacher', TeacherController::class);
 
 
-Route::get('blog', BlogController::class);
+Route::get('blog', BlogController::class)->middleware('test_route');
 
 
-Route::get('/admission', [AdmissionController::class, 'index']);
+Route::get('/admission', [AdmissionController::class, 'index'])->middleware('test_route');
 
 Route::post('/admission/store', [AdmissionController::class,'store']);
 
