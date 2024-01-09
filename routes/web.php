@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -156,4 +157,8 @@ Route::get('blog', BlogController::class)->middleware('test_route');
 Route::get('/admission', [AdmissionController::class, 'index'])->middleware('test_route');
 
 Route::post('/admission/store', [AdmissionController::class,'store']);
+
+
+Route::get('/book', [BookController::class, 'index']);
+Route::get('/book/{id}', [BookController::class, 'book_details']);
 
