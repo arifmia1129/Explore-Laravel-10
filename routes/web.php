@@ -159,6 +159,8 @@ Route::get('/admission', [AdmissionController::class, 'index'])->middleware('tes
 Route::post('/admission/store', [AdmissionController::class,'store']);
 
 
-Route::get('/book', [BookController::class, 'index']);
-Route::get('/book/{id}', [BookController::class, 'book_details']);
+Route::group(['middleware'=>'custom'], function () {
+    Route::get('/book', [BookController::class, 'index']);
+    Route::get('/book/{id}', [BookController::class, 'book_details']);
+});
 
