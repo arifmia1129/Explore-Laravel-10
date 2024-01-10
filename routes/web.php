@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -164,3 +165,45 @@ Route::group(['middleware'=>'custom'], function () {
     Route::get('/book/{id}', [BookController::class, 'book_details']);
 });
 
+Route::get('/store-session-data', function (Request $request) {
+
+    $request->session()->put([
+        'username'=>'mdarifmia',
+        'role'=>'admin'
+    ]);
+
+
+    session([
+        'username'=>'mdarifmia',
+        'role'=>'admin',
+        'token'=> 'test_token',
+        'mobile'=> '01849676331',
+        'email'=>'arif.vtti@gmail.com'
+    ]);
+
+    $request->session()->flash('success', 'true');
+
+});
+
+
+Route::get('get-session-data', function (Request $request) {
+    // dd(session()->all());
+
+    // echo $request -> session() -> get('username');
+    // echo '<br>';
+    // echo $request -> session () -> get('role');
+
+    // echo session('username');
+    // echo '<br>';
+    // echo session('role');
+
+    // if($request->session()->has('mobile')) {
+    //     echo $request->session()->get('mobile');
+    // }else{
+    //     echo 'There is no mobile session field';
+    // }
+
+
+    dd($request -> session()->all());
+
+});
