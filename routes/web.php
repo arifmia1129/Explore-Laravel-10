@@ -207,3 +207,10 @@ Route::get('get-session-data', function (Request $request) {
     dd($request -> session()->all());
 
 });
+
+
+Route::get('delete-session-data', function (Request $request) {
+    // $request -> session() -> forget('username');
+
+    $request -> session() -> flush();
+});
