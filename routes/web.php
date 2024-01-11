@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -214,3 +215,6 @@ Route::get('delete-session-data', function (Request $request) {
 
     $request -> session() -> flush();
 });
+
+
+Route::get('contact', [ContactController::class, 'index']);
