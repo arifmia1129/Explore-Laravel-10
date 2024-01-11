@@ -15,6 +15,13 @@
 </head>
 <body>
     <h2>Write contact information with bellow form</h2>
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            {{ $error }} <br>
+        @endforeach
+    @endif
+
     <form action="{{ route('contact_store') }}" method="post">
         @csrf
         <div>

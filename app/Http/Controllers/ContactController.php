@@ -11,6 +11,15 @@ class ContactController extends Controller
     }
 
     public function store(Request $request) {
-        dd($request->all());
+        // dd($request->all());
+
+        $request->validate(
+            [
+                'name'=>'required',
+                'phone'=>'required',
+                'email'=>'required',
+                'message'=>'required'
+            ]
+        );
     }
 }
