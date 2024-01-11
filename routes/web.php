@@ -218,3 +218,4 @@ Route::get('delete-session-data', function (Request $request) {
 
 
 Route::get('contact', [ContactController::class, 'index']);
+Route::post('contact/store', [ContactController::class, 'store'])->name('contact_store');

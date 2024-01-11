@@ -15,7 +15,8 @@
 </head>
 <body>
     <h2>Write contact information with bellow form</h2>
-    <form action="" method="post">
+    <form action="{{ route('contact_store') }}" method="post">
+        @csrf
         <div>
             <div class="mb_10">
                 <label for="">Name</label> <br>
