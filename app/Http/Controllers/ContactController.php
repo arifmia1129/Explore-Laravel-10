@@ -21,5 +21,7 @@ class ContactController extends Controller
                 'message'=>'required'
             ]
         );
+
+        dd($request->all());
     }
 }
