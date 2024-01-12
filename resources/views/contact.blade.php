@@ -31,7 +31,7 @@
     <form action="{{ route('contact_store') }}" method="post">
         @csrf
         <div>
-            <div class="mb_10">
+            {{-- <div class="mb_10">
                 <label for="">Name</label> <br>
                 <input type="text" name="name" id="name" placeholder="Write your name here" value="{{ old('name') }}" class="@error('name')
                     input-error
@@ -70,8 +70,16 @@
                 @error('email')
                     <small class="error">{{ $message }}</small>
                 @enderror
-            </div>
+            </div> --}}
             <div class="mb_10">
+                <label for="">Attachment</label> <br>
+                <input type="file" name="file" id="file" >
+                <br>
+                @error('file')
+                    <small class="error">{{ $message }}</small>
+                @enderror
+            </div>
+            {{-- <div class="mb_10">
                 <label for="">Message</label> <br>
                 <textarea name="message" id="message" placeholder="Write your message here" cols="30" rows="5" class="@error('message')
                  input-error
@@ -82,7 +90,7 @@
                 <small class="error">{{ $message }}</small>
 
                 @enderror
-            </div>
+            </div> --}}
             <button type="submit">Submit</button>
         </div>
     </form>
