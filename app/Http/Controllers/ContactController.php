@@ -16,6 +16,7 @@ class ContactController extends Controller
         $request->validate(
             [
                 'name'=>'required|string|max:30|min:3',
+                'dob'=>['required', 'regex:/^\d{4}-\d{2}-\d{2}+$/'],
                 'phone'=>'required',
                 'email'=>'required|email',
                 'message'=>'required'

@@ -42,6 +42,16 @@
                 @enderror
             </div>
             <div class="mb_10">
+                <label for="">Date of birth</label> <br>
+                <input type="text" name="dob" id="dob" placeholder="Write your dob here" value="{{ old('dob') }}" class="@error('dob')
+                    input-error
+                @enderror">
+                <br>
+                @error('dob')
+                   <small class="error"> {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb_10">
                 <label for="">Phone</label> <br>
                 <input type="text" name="phone" id="phone" placeholder="Write your phone here" value="{{ old('phone') }}" class="@error('phone')
                     input-error
