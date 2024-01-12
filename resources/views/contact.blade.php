@@ -27,19 +27,19 @@
         <div>
             <div class="mb_10">
                 <label for="">Name</label> <br>
-                <input type="text" name="name" id="name" placeholder="Write your name here">
+                <input type="text" name="name" id="name" placeholder="Write your name here" value="{{ old('name') }}">
             </div>
             <div class="mb_10">
                 <label for="">Phone</label> <br>
-                <input type="text" name="phone" id="phone" placeholder="Write your phone here">
+                <input type="text" name="phone" id="phone" placeholder="Write your phone here" value="{{ old('phone') }}">
             </div>
             <div class="mb_10">
                 <label for="">Email</label> <br>
-                <input type="text" name="email" id="email" placeholder="Write your email here">
+                <input type="text" name="email" id="email" placeholder="Write your email here" value="{{ old('email') }}">
             </div>
             <div class="mb_10">
                 <label for="">Email</label> <br>
-                <textarea name="message" id="message" placeholder="Write your message here" cols="30" rows="5"></textarea>
+                <textarea name="message" id="message" placeholder="Write your message here" cols="30" rows="5">{{ old('message') }}</textarea>
             </div>
             <button type="submit">Submit</button>
         </div>
