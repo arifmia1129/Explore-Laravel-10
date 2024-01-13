@@ -15,5 +15,8 @@
     <input type="file" name="my_file" id="my_file">
     <button type="submit">Submit</button>
     </form>
+    <div>
+        <a href="{{ route('delete') }}">Delete Image</a>
+    </div>
 </body>
 </html>

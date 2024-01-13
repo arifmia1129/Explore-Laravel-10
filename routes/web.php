@@ -26,6 +26,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('store', [HomeController::class, 'store'])->name('store');
 
+Route::get('delete', [HomeController::class, 'delete'])->name('delete');
+
 Route::get('welcome', function(){
     return view('welcome');
 })->name('welcome');

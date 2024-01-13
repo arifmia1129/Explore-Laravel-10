@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -21,6 +23,14 @@ class HomeController extends Controller
         echo($new_name);
 
         $request->my_file->storeAs('uploads', $new_name);
+
+        return redirect()->back();
+    }
+
+    public function delete(Request $request) {
+        // Storage::delete('uploads/new_image.png');
+        // File::delete(storage_path('/app/public/uploads/new_image.png'));
+        unlink(storage_path('/app/public/uploads/new_image.png'));
 
         return redirect()->back();
     }
