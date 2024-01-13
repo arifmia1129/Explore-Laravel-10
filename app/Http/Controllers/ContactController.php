@@ -22,8 +22,16 @@ class ContactController extends Controller
                 // 'email'=>'required|email',
                 // 'message'=>'required',
                 // 'file'=>['required', 'image', 'max:110']
-                'password'=>['required', Password::min(8)->mixedCase()->numbers()],
-                'confirm_password'=>['required', 'same:password']
+                // 'password'=>['required', Password::min(8)->mixedCase()->numbers()],
+                'pw'=>['required', 'min:8',],
+                // 'confirm_password'=>['required', 'same:password']
+            ],
+            [
+                // 'password.required'=> 'Provide your password',
+                // 'password.min' => 'Password must be 8 characters'
+            ],
+            [
+                'pw'=>'Password'
             ]
         );
 

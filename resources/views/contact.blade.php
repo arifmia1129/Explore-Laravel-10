@@ -98,18 +98,18 @@
     <form action="{{ route('contact_store') }} " method="post">
         @csrf
         <div>
-            <label for="password">Password</label>
+            <label for="pw">Password</label>
         <br>
-        <input type="password" name="password" id="password" placeholder="Write your password here" class="@error('password')
+        <input type="password" name="pw" id="pw" placeholder="Write your password here" class="@error('pw')
             input-error
         @enderror">
         <br>
-        @error('password')
+        @error('pw')
         <small class="error">{{ $message }}</small>
         @enderror
         </div>
-        <div>
-            <label for="confirm_password">Confirm Password</label>
+        {{-- <div>
+            <label for="confirm_pw">Confirm Password</label>
         <br>
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Write confirm password" class="@error('confirm_password')
             input-error
@@ -118,7 +118,7 @@
         @error('confirm_password')
         <small class="error">{{ $message }}</small>
         @enderror
-        </div>
+        </div> --}}
 
         <div style="margin-top: 10px">
             <button type="submit">Submit</button>
