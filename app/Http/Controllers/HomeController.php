@@ -12,9 +12,15 @@ class HomeController extends Controller
 
     public function store(Request $request){
         // Assuming 'my_file' is the name attribute of your file input in the form
-        $final_name = 'new_file.'.$request->file('my_file')->extension();
+        // $final_name = 'new_file.'.$request->file('my_file')->extension();
 
-        $request->my_file->move(public_path('uploads'), $final_name);
+        // $request->my_file->move(public_path('uploads'), $final_name);
+
+        $new_name = 'new_image.'.$request->my_file->extension();
+
+        echo($new_name);
+
+        $request->my_file->storeAs('uploads', $new_name);
 
         return redirect()->back();
     }
