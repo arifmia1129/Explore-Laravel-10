@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 
 class ContactController extends Controller
 {
@@ -20,7 +21,9 @@ class ContactController extends Controller
                 // 'phone'=>'required',
                 // 'email'=>'required|email',
                 // 'message'=>'required',
-                'file'=>['required', 'max:110']
+                // 'file'=>['required', 'image', 'max:110']
+                'password'=>['required', Password::min(8)->mixedCase()->numbers()],
+                'confirm_password'=>['required', 'same:password']
             ]
         );
 

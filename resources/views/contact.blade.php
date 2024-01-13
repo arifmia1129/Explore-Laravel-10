@@ -28,10 +28,10 @@
         @endforeach
     @endif --}}
 
-    <form action="{{ route('contact_store') }}" method="post">
+    {{-- <form action="{{ route('contact_store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div>
-            {{-- <div class="mb_10">
+            <div class="mb_10">
                 <label for="">Name</label> <br>
                 <input type="text" name="name" id="name" placeholder="Write your name here" value="{{ old('name') }}" class="@error('name')
                     input-error
@@ -70,7 +70,7 @@
                 @error('email')
                     <small class="error">{{ $message }}</small>
                 @enderror
-            </div> --}}
+            </div>
             <div class="mb_10">
                 <label for="">Attachment</label> <br>
                 <input type="file" name="file" id="file" >
@@ -79,7 +79,7 @@
                     <small class="error">{{ $message }}</small>
                 @enderror
             </div>
-            {{-- <div class="mb_10">
+            <div class="mb_10">
                 <label for="">Message</label> <br>
                 <textarea name="message" id="message" placeholder="Write your message here" cols="30" rows="5" class="@error('message')
                  input-error
@@ -90,9 +90,40 @@
                 <small class="error">{{ $message }}</small>
 
                 @enderror
-            </div> --}}
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form> --}}
+
+    <form action="{{ route('contact_store') }} " method="post">
+        @csrf
+        <div>
+            <label for="password">Password</label>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Write your password here" class="@error('password')
+            input-error
+        @enderror">
+        <br>
+        @error('password')
+        <small class="error">{{ $message }}</small>
+        @enderror
+        </div>
+        <div>
+            <label for="confirm_password">Confirm Password</label>
+        <br>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Write confirm password" class="@error('confirm_password')
+            input-error
+        @enderror">
+        <br>
+        @error('confirm_password')
+        <small class="error">{{ $message }}</small>
+        @enderror
+        </div>
+
+        <div style="margin-top: 10px">
             <button type="submit">Submit</button>
         </div>
     </form>
+
 </body>
 </html>
