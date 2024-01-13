@@ -16,7 +16,7 @@ class HomeController extends Controller
 
         $request->my_file->move(public_path('uploads'), $final_name);
 
-        echo $final_name;
+        return redirect()->back();
     }
 
 }
