@@ -4,6 +4,7 @@ use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -219,3 +220,8 @@ Route::get('delete-session-data', function (Request $request) {
 
 Route::get('contact', [ContactController::class, 'index']);
 Route::post('contact/store', [ContactController::class, 'store'])->name('contact_store');
+
+
+Route::get('post', [PostController::class, 'index']);
+
+Route::post('/create-post', [PostController::class, 'store'])->name('post_store');
