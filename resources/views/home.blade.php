@@ -7,6 +7,9 @@
     <title>Home</title>
 </head>
 <body>
+    <div>
+        <img src="{{ asset('/storage/uploads/new_image.png') }}" alt="image" style="width: 300px">
+    </div>
     <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
         @csrf
     <input type="file" name="my_file" id="my_file">
